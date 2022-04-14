@@ -5,18 +5,20 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>App Finanças</title>
-    <link rel="shortcut icon" href="assets/img/money-bill-alt-solid.svg" type="image/x-icon">
+    <link rel="shortcut icon" href="assets/img/comment-dollar-solid.svg" type="image/x-icon">
+    <link rel="stylesheet" href="assets/fontawesome/css/all.min.css">
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
     <body>
-        <header class="header">
-            <nav class="nav-bar">
+        <header class="header" id="header">
+            <nav class="nav-bar" id="navbar">
                 <div class="logo">
-                    <a href=""><img src="assets/img/money-bill-alt-solid.svg" alt="logo"></a>
+                    <a href=""><i class="fas fa-comment-dollar fa-3x"></i></a>
                 </div>
 
                 <div class="nav-list">
                     <ul>
+                        <li class="nav-item"><a class="nav-link" href="">Home</a></li>
                         <li class="nav-item"><a class="nav-link" href="">Registos</a></li>
                         <li class="nav-item"><a class="nav-link" href="">Consultas</a></li>
                     </ul>
@@ -24,19 +26,83 @@
 
                 <!-- button menu mobile inicio-->
                 <div class="mobile-menu-icon">
-                    <button onclick="showMenu()"><img class="icon" src="assets/img/bars-solid.svg" width="30" height="30" alt=""></button>
+                    <button onclick="showMenu()"><i class="fas fa-bars fa-3x"></i></button>
                 </div>
             </nav>
 
             <!--ul menu mobile inicio-->
             <div class="mobile-menu">
                 <ul>
+                    <li class="nav-item"><a class="nav-link" href="">Home</a></li>
                     <li class="nav-item"><a class="nav-link" href="">Registos</a></li>
                     <li class="nav-item"><a class="nav-link" href="">Consultas</a></li>
                 </ul>
             </div>
         </header>
-        
+
+        <div class="container">
+            <h2>Adicionar Registro</h2><br> 
+            
+            <form id="form">
+                <div class="form-control">
+                    <label for="ano">Ano</label>
+                    <input type="number"  id="ano" placeholder="Digite o Ano"/>
+                </div>
+
+                <div class="form-control">
+                    <label for="mes">Mês</label>
+                    <select name="mes" id="mes" class="form-control">
+                        <option value="">Selecione o Mês</option>
+                        <option value="01">Janeiro</option>
+                        <option value="02">Fevereiro</option>
+                        <option value="03">Março</option>
+                        <option value="04">Abril</option>
+                        <option value="05">Maio</option>
+                        <option value="06">Junho</option>
+                        <option value="07">Julho</option>
+                        <option value="08">Agosto</option>
+                        <option value="09">Setembro</option>
+                        <option value="10">Outubro</option>
+                        <option value="11">Novembro</option>
+                        <option value="12">Dezembro</option>
+                    </select>
+                </div>
+
+                <div class="form-control">
+                    <label for="dia">Dia</label>
+                    <input type="number"  id="dia" placeholder="Digite o Dia"/>
+                </div>
+
+                <div class="form-control">
+                    <label for="data">Categoria</label><br>
+                    <select name="tipo" id="tipo" class="form-control">
+                        <option value="">Escolha uma Categoria</option>
+                        <option value="Lazer">Lazer</option>
+                        <option value="Saude">Saúde</option>
+                        <option value="Alimentacao">Alimentação</option>
+                        <option value="Transporte">Transporte</option>
+                        <option value="Educacao">Educação</option>
+                        <option value="Moradia">Moradia</option>
+                    </select>
+                </div>                         
+            
+                <div class="form-control">
+                    <label for="descricao">Descrição</label>
+                    <input type="text"  id="descricao" placeholder="Digite uma Descrição(Opcional)"/>
+                </div>           
+                
+            
+                <div class="form-control">
+                    <label for="valor">Valor</label>
+                    <input type="text"  id="valor" placeholder="Digite o Valor"/>
+                </div>
+            
+                <button class="btn">Adicionar</button>         
+            </form>   
+                
+                
+        </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
     <script src="assets/js/menu.js"></script>
     </body>
 </html>
