@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
     <body>
+        <!--Header inicio-->
         <header class="header" id="header">
             <nav class="nav-bar" id="navbar">
                 <div class="logo">
@@ -39,9 +40,11 @@
                 </ul>
             </div>
         </header>
+        <!--Header fim-->
 
         <div class="container">
             <h2>Adicionar Registro</h2><br> 
+            <h3 id="mostrar-data"></h3>
             
             <form id="form">
                 <div class="form-control">
@@ -74,7 +77,7 @@
                 </div>
 
                 <div class="form-control">
-                    <label for="data">Categoria</label><br>
+                    <label for="tipo">Categoria</label><br>
                     <select name="tipo" id="tipo" class="form-control">
                         <option value="">Escolha uma Categoria</option>
                         <option value="Lazer">Lazer</option>
@@ -97,12 +100,12 @@
                     <input type="text"  id="valor" placeholder="Digite o Valor"/>
                 </div>
             
-                <button class="btn">Adicionar</button>         
-            </form>   
-                
-                
+                <button type="button" class="btn" onclick="addDespesa()";>Adicionar</button>         
+            </form>                  
         </div>
+
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
     <script src="assets/js/menu.js"></script>
+    <script src="assets/js/app.js"></script>
     </body>
 </html>

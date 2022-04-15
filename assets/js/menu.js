@@ -10,12 +10,12 @@ function showMenu(){
     }else{
         menuMobile.classList.add('open');
         bgMenu.classList.add('open');
-       //document.querySelector('.icon').src = "assets/img/window-close-solid.svg";
+        //document.querySelector('.icon').src = 'assets/img/bars-solid.svg';
     }
 }
 
 //ALTERA BACKGROUND DO MENU AO SCROLL DA PAGINA
-  $(function(){   
+$(function(){   
     var nav = $('#header');   
     $(window).scroll(function () { 
         if ($(this).scrollTop() > 1) { 
