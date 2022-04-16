@@ -51,12 +51,12 @@
             <form id="form">
                 <div class="form-control">
                     <label for="ano">Ano</label>
-                    <input type="number"  id="ano" placeholder="Digite o Ano"/>
+                    <input type="number" class="input-field"  id="ano" placeholder="Digite o Ano"/>
                 </div>
 
                 <div class="form-control">
                     <label for="mes">Mês</label>
-                    <select name="mes" id="mes" class="form-control">
+                    <select name="mes" class="input-field"  id="mes" class="form-control">
                         <option value="">Selecione o Mês</option>
                         <option value="01">Janeiro</option>
                         <option value="02">Fevereiro</option>
@@ -75,12 +75,12 @@
 
                 <div class="form-control">
                     <label for="dia">Dia</label>
-                    <input type="number" min="1" max="31"  id="dia" placeholder="Digite o Dia"/>
+                    <input type="number" min="1" max="31" class="input-field"  id="dia" placeholder="Digite o Dia"/>
                 </div>
 
                 <div class="form-control">
                     <label for="tipo">Categoria</label><br>
-                    <select name="tipo" id="tipo" class="form-control">
+                    <select name="tipo" class="input-field"   id="tipo" class="form-control">
                         <option value="">Escolha uma Categoria</option>
                         <option value="Lazer">Lazer</option>
                         <option value="Saude">Saúde</option>
@@ -93,13 +93,13 @@
             
                 <div class="form-control">
                     <label for="descricao">Descrição</label>
-                    <input type="text"  id="descricao" placeholder="Digite uma Descrição"/>
+                    <input type="text" class="input-field"  id="descricao" placeholder="Digite uma Descrição"/>
                 </div>           
                 
             
                 <div class="form-control">
                     <label for="valor">Valor</label>
-                    <input type="text"  id="valor" placeholder="Digite o Valor"/>
+                    <input type="text" class="input-field"  id="valor" placeholder="Digite o Valor"/>
                 </div>
             
                 <button type="button" class="btn" onclick="addDespesa()";>Adicionar</button>         
@@ -109,20 +109,37 @@
 
         <!--****************Modal de alerta inicio****************************-->
         <div class="modal" id="modalError">
-            <div class="modal-content">
-                <header class="modal-header">
-                    <h2 class="modal-title">Erro ao Cadastrar registro!</h2>
-                    <span class="modal-close" id="modalClose">&#10006;</span>
+            <div class="modal-content-error">
+                <header class="modal-header-error">
+                    <h2 class="modal-title">Erro ao Cadastrar!</h2>
+                    <span class="modal-close" id="modalCloseError">&#10006;</span>
                 </header>
-                <div class="modal-body">
+                <div class="modal-body-error">
                     Verifique todos os campos e preencha-os corretamente!!
                 </div>
                 <footer class="modal-footer">
-                    <button id="cancelar" class="button red">Voltar</button>
+                    <button id="cancelarModalError" class="modal-button red">Voltar e Corrigir</button>
                 </footer>
             </div>
         </div>
         <!--****************Modal de alerta fim****************************-->
+
+        <!--****************Modal de sucesso inicio****************************-->
+        <div class="modal" id="modalSuccess">
+            <div class="modal-content-success">
+                <header class="modal-header-success">
+                    <h2 class="modal-title">Cadastrado com sucesso!</h2>
+                    <span class="modal-close" id="modalCloseSuccess">&#10006;</span>
+                </header>
+                <div class="modal-body-success">
+                    Sua despesa foi cadastrada com sucesso!!
+                </div>
+                <footer class="modal-footer">
+                    <button id="cancelarModalSuccess" class="modal-button green">OK</button>
+                </footer>
+            </div>
+        </div>
+        <!--****************Modal de sucesso fim****************************-->
 
 
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>

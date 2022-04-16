@@ -1,4 +1,4 @@
-//=============ATIVAR MODAL==================
+//=============ATIVAR MODAL DE ERRO NA GRAVAÇÃO DOS DADOS==================
 const openModalError = () => document.getElementById('modalError').classList.add('active')
 
 const closeModalError = () => {
@@ -7,14 +7,38 @@ const closeModalError = () => {
 }
 //=======================================
 
-//=============== EVENTOS DE CLICK DOS BOTÕES
 
 
-document.getElementById('modalClose')
+//=============ATIVAR MODAL DE SUCESSO NA GRAVAÇÃO DOS DADOS==================
+const openModalSuccess = () => document.getElementById('modalSuccess').classList.add('active')
+
+const closeModalSuccess = () => {
+    document.getElementById('modalSuccess').classList.remove('active');
+}
+//==================================================================
+
+//===LIMPAR OS CAMPOS DOs INPUTS
+const clearFields = () => {
+    const fields = document.querySelectorAll('.input-field');
+    fields.forEach(field => field.value = "");
+}//============================
+
+
+//=============== EVENTOS DE CLICK DOS BOTÕES ERROR
+document.getElementById('modalCloseError')
     .addEventListener('click', closeModalError)
 
-document.getElementById('cancelar')
+document.getElementById('cancelarModalError')
     .addEventListener('click', closeModalError)
+//==============================================
+
+//=============== EVENTOS DE CLICK DOS BOTÕES SUCCESS
+document.getElementById('modalCloseSuccess')
+    .addEventListener('click', closeModalSuccess)
+
+document.getElementById('cancelarModalSuccess')
+    .addEventListener('click', closeModalSuccess)
+//==============================================
 
 
 
@@ -70,14 +94,6 @@ let db = new DB();
 
 
 
-
-
-
-
-
-
-
-
 function addDespesa(){
 
     let ano = document.getElementById('ano');
@@ -97,8 +113,9 @@ function addDespesa(){
     );
 
     if(despesa.validarCampos()){
-      //  db.armazenar(despesa);
-      console.log('tudo certo');
+        //db.armazenar(despesa);
+        openModalSuccess();
+        clearFields();
 
     }else{
         openModalError();
