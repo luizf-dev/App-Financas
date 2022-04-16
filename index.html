@@ -8,9 +8,10 @@
     <link rel="shortcut icon" href="assets/img/comment-dollar-solid.svg" type="image/x-icon">
     <link rel="stylesheet" href="assets/fontawesome/css/all.min.css">
     <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/modal.css">
 </head>
     <body>
-        <!--Header inicio-->
+        <!--**************************************Header inicio************************-->
         <header class="header" id="header">
             <nav class="nav-bar" id="navbar">
                 <div class="logo">
@@ -40,8 +41,9 @@
                 </ul>
             </div>
         </header>
-        <!--Header fim-->
+        <!--************************Header fim******************************-->
 
+        <!--************************Formulario inicio******************************-->
         <div class="container">
             <h2>Adicionar Registro</h2><br> 
             <h3 id="mostrar-data"></h3>
@@ -73,7 +75,7 @@
 
                 <div class="form-control">
                     <label for="dia">Dia</label>
-                    <input type="number"  id="dia" placeholder="Digite o Dia"/>
+                    <input type="number" min="1" max="31"  id="dia" placeholder="Digite o Dia"/>
                 </div>
 
                 <div class="form-control">
@@ -91,7 +93,7 @@
             
                 <div class="form-control">
                     <label for="descricao">Descrição</label>
-                    <input type="text"  id="descricao" placeholder="Digite uma Descrição(Opcional)"/>
+                    <input type="text"  id="descricao" placeholder="Digite uma Descrição"/>
                 </div>           
                 
             
@@ -103,6 +105,25 @@
                 <button type="button" class="btn" onclick="addDespesa()";>Adicionar</button>         
             </form>                  
         </div>
+        <!--************************Formulario fim******************************-->
+
+        <!--****************Modal de alerta inicio****************************-->
+        <div class="modal" id="modalError">
+            <div class="modal-content">
+                <header class="modal-header">
+                    <h2 class="modal-title">Erro ao Cadastrar registro!</h2>
+                    <span class="modal-close" id="modalClose">&#10006;</span>
+                </header>
+                <div class="modal-body">
+                    Verifique todos os campos e preencha-os corretamente!!
+                </div>
+                <footer class="modal-footer">
+                    <button id="cancelar" class="button red">Voltar</button>
+                </footer>
+            </div>
+        </div>
+        <!--****************Modal de alerta fim****************************-->
+
 
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
     <script src="assets/js/menu.js"></script>

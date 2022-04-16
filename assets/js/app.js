@@ -1,3 +1,23 @@
+//=============ATIVAR MODAL==================
+const openModalError = () => document.getElementById('modalError').classList.add('active')
+
+const closeModalError = () => {
+   // clearFields();
+    document.getElementById('modalError').classList.remove('active');
+}
+//=======================================
+
+//=============== EVENTOS DE CLICK DOS BOTÕES
+
+
+document.getElementById('modalClose')
+    .addEventListener('click', closeModalError)
+
+document.getElementById('cancelar')
+    .addEventListener('click', closeModalError)
+
+
+
 //========================CLASSES=============================//
 //**CLASSE DESPESA
 class Despesa{
@@ -9,6 +29,15 @@ class Despesa{
         this.tipo = tipo;
         this.descricao = descricao;
         this.valor = valor;
+    }
+
+    validarCampos(){
+        for(let i in this){
+            if(this[i] === undefined || this[i] === '' || this[i] === null){
+                return false;                
+            }
+        }
+        return true;
     }
 }
 
@@ -67,7 +96,13 @@ function addDespesa(){
         valor.value
     );
 
-    db.armazenar(despesa);
+    if(despesa.validarCampos()){
+      //  db.armazenar(despesa);
+      console.log('tudo certo');
+
+    }else{
+        openModalError();
+    }
 }
 
 
