@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>App Finanças</title>
+    <link rel="shortcut icon" href="assets/img/comment-dollar-solid.svg" type="image/x-icon">
+    <link rel="stylesheet" href="assets/fontawesome/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/modal.css">
+    <link rel="stylesheet" href="assets/css/table.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+    <body>
+        <!--**************************************Header inicio*************-->
+        <header class="header" id="header">
+            <nav class="nav-bar" id="navbar">
+                <div class="logo">
+                    <a href="index.html"><i class="fas fa-comment-dollar fa-3x"></i></a>
+                </div>
+
+                <div class="nav-list">
+                    <ul>
+                        <li class="nav-item"><a class="nav-link" href="index.html">Adicionar Registros</a></li>
+                        <li class="nav-item"><a class="nav-link" href="consultas.html">Consultas</a></li>
+                    </ul>
+                </div>
+
+                <!-- button menu mobile inicio-->
+                <div class="mobile-menu-icon">
+                    <button onclick="showMenu()"><i class="fas fa-bars fa-3x"></i></button>
+                </div>
+            </nav>
+
+            <!--ul menu mobile inicio-->
+            <div class="mobile-menu">
+                <ul>
+                    <li class="nav-item"><a class="nav-link" href="index.html">Adicionar Registros</a></li>
+                    <li class="nav-item"><a class="nav-link" href="consultas.html">Consultas</a></li>
+                </ul>
+            </div>
+        </header>
+        <!--************************Header fim******************************-->
+
+        <!--********************Tabela de Registros inicio******************-->
+        <div class="table-container">
+            <div class="search"> 
+                <input class="input-field-search" id="myInput" type="text" placeholder="Pesquisar">
+            </div> 
+           
+        <table class="table" id="tableClient">
+            <thead>
+                <tr>
+                    <th>Ano</th>
+                    <th>Mês</th>
+                    <th>Dia</th>
+                    <th>Categoria</th>
+                    <th>Descrição</th>
+                    <th>Valor</th>
+                </tr>
+            </thead>
+            <tbody id="myTable">
+                <tr>
+                    <td data-label="Ano">2022</td>
+                    <td data-label="Mês">06</td>
+                    <td data-label="Dia">25</td>
+                    <td data-label="Categoria">Alimentação</td>
+                    <td data-label="Descrição">Almoço</td>
+                    <td data-label="Valor">25.99</td>
+                </tr>
+
+                <tr>
+                    <td data-label="Ano">2021</td>
+                    <td data-label="Mês">07</td>
+                    <td data-label="Dia">20</td>
+                    <td data-label="Categoria">Moradia</td>
+                    <td data-label="Descrição">Aluguel</td>
+                    <td data-label="Valor">100.00</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <!--********************Tabela de Registros fim*********************-->     
+
+    <script>
+    //FILTRO DE BUSCA ============
+    $(document).ready(function(){
+        $("#myInput").on("keyup", function() {
+            var value = $(this).val().toLowerCase();
+            $("#myTable tr").filter(function() {
+            $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+            });
+        });
+        });
+    //================================
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="assets/js/menu.js"></script>
+    <script src="assets/js/app.js"></script>
+    </body>
+</html>

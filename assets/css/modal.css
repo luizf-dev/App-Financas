@@ -139,7 +139,7 @@ button.green{
     }
 
     .modal.active{
-        top:16%;
+        top:14%;
     }
 
     .modal-content-error, .modal-content-success{
