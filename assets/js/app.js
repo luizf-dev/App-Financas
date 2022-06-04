@@ -1,48 +1,16 @@
-//=============ATIVAR MODAL DE ERRO NA GRAVAÇÃO DOS DADOS==================
-const openModalError = () => document.getElementById('modalError').classList.add('active')
-
-const closeModalError = () => {
-   // clearFields();
-    document.getElementById('modalError').classList.remove('active');
-}
-//=======================================
 
 
-
-//=============ATIVAR MODAL DE SUCESSO NA GRAVAÇÃO DOS DADOS==================
-const openModalSuccess = () => document.getElementById('modalSuccess').classList.add('active')
-
-const closeModalSuccess = () => {
-    document.getElementById('modalSuccess').classList.remove('active');
-}
-//==================================================================
-
-//===LIMPAR OS CAMPOS DOs INPUTS
+//===============LIMPAR OS CAMPOS DOs INPUTS
 const clearFields = () => {
     const fields = document.querySelectorAll('.input-field');
     fields.forEach(field => field.value = "");
 }//============================
 
 
-//=============== EVENTOS DE CLICK DOS BOTÕES ERROR
-document.getElementById('modalCloseError')
-    .addEventListener('click', closeModalError)
-
-document.getElementById('cancelarModalError')
-    .addEventListener('click', closeModalError)
-//==============================================
-
-//=============== EVENTOS DE CLICK DOS BOTÕES SUCCESS
-document.getElementById('modalCloseSuccess')
-    .addEventListener('click', closeModalSuccess)
-
-document.getElementById('cancelarModalSuccess')
-    .addEventListener('click', closeModalSuccess)
-//==============================================
 
 
 
-//========================CLASSES=============================//
+//=================CLASSES=============================//
 //**CLASSE DESPESA
 class Despesa{
     constructor(ano, mes, dia, tipo, descricao, valor){
@@ -88,12 +56,12 @@ class DB {
         localStorage.setItem(id, JSON.stringify(despesa));  
         localStorage.setItem('id', id);
     }
+    
 }
-
 let db = new DB();
 
 
-
+//===========ADICIONA NOVA DESPESA===================//
 function addDespesa(){
 
     let ano = document.getElementById('ano');
@@ -112,8 +80,9 @@ function addDespesa(){
         valor.value
     );
 
+
     if(despesa.validarCampos()){
-        //db.armazenar(despesa);
+        db.armazenar(despesa);
         openModalSuccess();
         clearFields();
 
@@ -121,6 +90,10 @@ function addDespesa(){
         openModalError();
     }
 }
+
+//============LISTA AS DESPESAS========================//
+
+
 
 
 
