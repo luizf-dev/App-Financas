@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="assets/css/table.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
-    <body>
+    <body onload="carregarListaDespesas()">
         <!--**************************************Header inicio*************-->
         <header class="header" id="header">
             <nav class="nav-bar" id="navbar">
@@ -52,15 +52,15 @@
         <table class="table" id="tableClient">
             <thead>
                 <tr>
-                    <th>Ano</th>
-                    <th>Mês</th>
-                    <th>Dia</th>
+                    <th>Dia/Mês/Ano</th>
                     <th>Categoria</th>
                     <th>Descrição</th>
                     <th>Valor</th>
+                    <th>Ações</th>
                 </tr>
             </thead>
             <tbody id="myTable">
+               <!--
                 <tr>
                     <td data-label="Ano"></td>
                     <td data-label="Mês"></td>
@@ -69,6 +69,7 @@
                     <td data-label="Descrição"></td>
                     <td data-label="Valor"></td>
                 </tr>
+            -->
             </tbody>
         </table>
     </div>

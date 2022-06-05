@@ -181,6 +181,24 @@ input:focus{
     outline: 0;
 }
 
+.btn-edit{
+    color: #fff;
+    background-color: #103900;
+    cursor: pointer;
+    border: 0;
+    font-size: 1em;
+    padding: 5px;
+}
+
+.btn-delete{
+    color: #fff;
+    background-color: rgb(128, 61, 61);
+    cursor: pointer;
+    border: 0;
+    font-size: 1em;
+    padding: 5px;
+}
+
 select{
     width: 100%;
     outline: none;
