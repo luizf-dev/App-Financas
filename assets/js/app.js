@@ -145,7 +145,6 @@ function carregarListaDespesas(){
             <td data-label="Descrição">${d.descricao}</td>
             <td data-label="Valor">${d.valor}</td>
             <td data-label="Ações">
-                <button type="button" class="btn-edit">Edd</button>
                 <button type="button" class="btn-delete">Del</button>
             </td>
         `    
