@@ -72,12 +72,20 @@ class DB {
             continue
         }
 
+            despesa.id = i;
             despesas.push(despesa);
         }     
         
-        return despesas;
-        
+        return despesas;        
     }
+
+    deletar(id){
+        localStorage.removeItem(id);
+
+    }
+
+
+
 }
 let db = new DB();
 
@@ -136,6 +144,7 @@ function carregarListaDespesas(){
 
         //criando a linha -> 'tr'// 
         let linha = listaDespesas.insertRow();
+        
 
         //criando as colunas -> 'td'// 
         linha.innerHTML = 
@@ -144,10 +153,22 @@ function carregarListaDespesas(){
             <td data-label="Categoria">${d.tipo}</td>
             <td data-label="Descrição">${d.descricao}</td>
             <td data-label="Valor">${d.valor}</td>
-            <td data-label="Ações">
-                <button type="button" class="btn-delete">Del</button>
+            <td data-label="Deletar">
+                <button type="button" id="btn-del" class="btn-delete"><i class="fas fa-times fa-1x"></i></button>
             </td>
         `    
+        let btn = document.getElementById('btn-del');
+
+        btn.id = d.id;
+
+        btn.onclick = function(){
+
+            const response = confirm(`Deseja realmente excluir o registro ${d.tipo}/${d.descricao} no valor de ${d.valor} ??`);
+            if(response){
+                db.deletar(d.id);
+            }           
+            window.location.reload();
+        }          
     })
 }
 
